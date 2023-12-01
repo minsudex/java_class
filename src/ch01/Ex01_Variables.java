@@ -8,3 +8,11 @@ public class Ex01_Variables {
 	double height = 170;
 	String address = "인천시 남동구 만수동";
 	String mobile = "010-4063-7036";
+	
+	// 변수값 출력
+	System.out.println(name);
+	System.out.println("name");
+//	System.out.print
+	
+	}
+}
