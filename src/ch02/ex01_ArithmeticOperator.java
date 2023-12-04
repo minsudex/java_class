@@ -1,6 +1,6 @@
 package ch02;
 
-public class ex01_ArithmeticOperator {
+public class Ex01_ArithmeticOperator {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -32,6 +32,7 @@ public class ex01_ArithmeticOperator {
 		System.out.println(subResult);
 		int mulResult = num1 * num2;
 		System.out.println(mulResult);
+		
 		int divResult = num1 / num2;
 		System.out.println(divResult);
 		int remainResult = num1 % num2;

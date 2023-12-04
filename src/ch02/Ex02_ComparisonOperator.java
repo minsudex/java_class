@@ -1,6 +1,6 @@
 package ch02;
 
-public class Ex02_ComparisonOperator extends ex01_ArithmeticOperator {
+public class Ex02_ComparisonOperator extends Ex01_ArithmeticOperator {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
