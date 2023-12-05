@@ -21,9 +21,9 @@ public class Ex05_ForEx {
         System.out.println("꿑값: ");
         int end = scanner.nextInt();
         int sum = 0;
-        for (int i = 1; i < 10; i++) {
+        for (int i = start; i < end; i++) {
             sum += i;
-            if (i < 10) {
+            if (i < end) {
                 System.out.print(i + "+");
             } else {
                 System.out.print(i + "=");
