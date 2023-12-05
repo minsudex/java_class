@@ -15,7 +15,7 @@ public class Ex05_ForEx {
          *    110 부터 555 까지의 합은 000 입니다.
          */
 
-        Scanner scanner= new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("시작값: ");
         int start = scanner.nextInt();
         System.out.println("꿑값: ");
@@ -30,6 +30,6 @@ public class Ex05_ForEx {
             }
         }
         System.out.println(sum);
-        System.out.println(start + "부터" + end + "까지의 합은" + sum +  "입니다.");
+        System.out.println(start + "부터" + end + "까지의 합은" + sum + "입니다.");
     }
 }
