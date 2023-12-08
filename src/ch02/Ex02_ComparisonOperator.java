@@ -17,5 +17,4 @@ public class Ex02_ComparisonOperator extends Ex01_ArithmeticOperator {
 		System.out.println(result);
 		System.out.println(bool1);
 	}
-	
 }
