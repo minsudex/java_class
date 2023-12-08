@@ -14,12 +14,9 @@ public class Ex03_Random {
         //  결과값에 10을 곱해서 정수 부분을 만듬 (0~10)
         System.out.println(Math.random() * 45);
         //  실수(double) => 정수(int) : 행변환(type conversion)
-        System.out.println((int)(Math.random() * 10)); // 0 이상 9 이하의 정수
-        System.out.println((int)(Math.random()  * 10) + 1); // 1 이상 10 이하의 정수
-        System.out.println((int)(Math.random() * 45) + 1); // 1 이상 45 이하의 정수
-
-
-
+        System.out.println((int) (Math.random() * 10)); // 0 이상 9 이하의 정수
+        System.out.println((int) (Math.random() * 10) + 1); // 1 이상 10 이하의 정수
+        System.out.println((int) (Math.random() * 45) + 1); // 1 이상 45 이하의 정수
 
 
         // 형변환
@@ -31,7 +28,7 @@ public class Ex03_Random {
         System.out.println("double2 = " + double2);
 
         //  실수형 변수를 정수형 변수에 대입(강제행변환)
-        int int2 =(int) double2; // 형변환 에러
+        int int2 = (int) double2; // 형변환 에러
         System.out.println("int2 = " + int2);
     }
 }
