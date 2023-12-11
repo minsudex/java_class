@@ -11,7 +11,7 @@ public class Ex10_ForEx {
          */
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("정수를 입력하세요: ");
+        System.out.print("숫자 입력: ");
         int n = scanner.nextInt();
 
         int sum = 0;

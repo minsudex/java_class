@@ -2,7 +2,7 @@ package ch06_for;
 
 public class Ex02_ForEx {
     public static void main(String[] args) {
-        // 1~10까지 순섣대로 출력
+        // 1~10까지 순서대로 출력
         for (int i = 1; i < 11; i++) {
             System.out.println("i = " + i);
         }

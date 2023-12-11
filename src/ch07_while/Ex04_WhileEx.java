@@ -6,12 +6,25 @@ public class Ex04_WhileEx {
          * random() 메서드를 이용해서 1~6이 나오는 주사위를 설정하고
          * 주사위가 계속 던져지면서 6이 나오면 종료되는 코드 작성
          */
-
-        int number = 0;
-        while (number != 6) {
-            number = (int) (Math.random() * 6) + 1;
-            System.out.println(number);
+//        System.out.println((int)(Math.random() * 6) + 1);
+//        int number = 0;
+//        while (number != 6) {
+//            number = (int) (Math.random() * 6) + 1;
+//            System.out.println(number);
+//    }
+//}
+//}
+        boolean run = true;
+        while (run) {
+            int num = (int)(Math.random() * 6) + 1;
+            System.out.println("num = " + num);
+            if (num == 6) {
+                run = false;
+            }
         }
     }
 }
+
+
+
 

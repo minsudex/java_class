@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class Ex05_WhileEx {
     public static void main(String[] args) {
-
+        /**
+         * random() 메서드를 이용해서 1~100 사이의 숫자를 하나 만들고
+         * 반복문 안에서 해당 숫자를 맞출 때까지 계속 숫자를 입력받도록 하고
+         * 숫자를 맞추면 종료하고 몇 번만에 맞췄는지를 출력해줌
+         */
         Scanner scanner = new Scanner(System.in);
         int input = 0, count = 0;
         boolean run = true;

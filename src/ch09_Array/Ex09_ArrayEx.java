@@ -14,13 +14,13 @@ public class Ex09_ArrayEx {
             System.out.println("---------------------------------------------------------");
             System.out.print("선택> ");
             int select = scanner.nextInt();
-            if(select == 1) {
+            if (select == 1) {
                 System.out.print("학생수>");
                 studentNum = scanner.nextInt();
                 score = new int[studentNum];
             } else if (select == 2) {
                 for (int i = 0; i < score.length; i++) {
-                    System.out.print((i+1)+"번 학생 점수: ");
+                    System.out.print((i + 1) + "번 학생 점수: ");
                     score[i] = scanner.nextInt();
                 }
             } else if (select == 3) {
@@ -28,11 +28,12 @@ public class Ex09_ArrayEx {
                     System.out.println((i + 1) + "번 학생 점수: " + score[i]);
                 }
             } else if (select == 4) {
+                // 최댓값, 평균값 계산 및 출력
                 int min = 0;
                 int sum = 0;
-                for(int i =0; i< score.length; i++) {
-                    sum+=score[i];
-                    for(int j = i+1; j < score.length; j++){
+                for (int i = 0; i < score.length; i++) {
+                    sum += score[i];
+                    for (int j = i + 1; j < score.length; j++) {
                         if (score[i] < score[j]) {
                             min = score[i];
                             score[i] = score[j];
@@ -40,10 +41,10 @@ public class Ex09_ArrayEx {
                         }
                     }
                 }
-                System.out.println("최고점수: "+ score[0]);
-                System.out.println("평균점수: "+ (double)(sum/score.length));
-                for (int i = 0; i < score.length; i++){
-                    System.out.println((i+1)+"등: "+score[i]);
+                System.out.println("최고점수: " + score[0]);
+                System.out.println("평균점수: " + (double) (sum / score.length));
+                for (int i = 0; i < score.length; i++) {
+                    System.out.println((i + 1) + "등: " + score[i]);
                 }
             } else if (select == 5) {
                 System.out.println("종료");
