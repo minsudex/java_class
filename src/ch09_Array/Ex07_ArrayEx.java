@@ -1,4 +1,4 @@
-package ch09.Array;
+package ch09_Array;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

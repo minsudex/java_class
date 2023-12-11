@@ -1,4 +1,4 @@
-package ch09.Array;
+package ch09_Array;
 
 public class Ex01_ArrayEx {
     public static void main(String[] args) {

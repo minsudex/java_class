@@ -1,4 +1,4 @@
-package ch08.String;
+package ch08_String;
 
 public class Ex01_String {
     public static void main(String[] args) {
