@@ -35,6 +35,7 @@ public class Ex09_ArrayEx {
                     sum += score[i];
                     for (int j = i + 1; j < score.length; j++) {
                         if (score[i] < score[j]) {
+
                             min = score[i];
                             score[i] = score[j];
                             score[j] = min;
