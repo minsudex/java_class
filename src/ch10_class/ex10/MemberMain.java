@@ -11,14 +11,16 @@ public class MemberMain {
      * 3. 종료
      */
     public static void main(String[] args) {
+//   *      회원가입 정보는 스캐너로 받음
+
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
         int selectNo = 0;
         Member member = null;
-
-             System.out.println("-----------------------------------------");
-             System.out.println("회원가입 | 2. 로그인 3.종료");
-            System.out.println("------------------------------------------");
+//     * 1. 회원가입(기본생성자이용)
+             System.out.println("------------------------");
+             System.out.println("1. 회원가입 | 2. 로그인 3.종료");
+            System.out.println("-------------------------");
             System.out.println("선택>");
             selectNo = scanner.nextInt();
         selectNo = scanner.nextInt();

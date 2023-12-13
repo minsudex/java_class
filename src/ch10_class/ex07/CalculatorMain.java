@@ -17,9 +17,9 @@ public class CalculatorMain {
         Calculator calculator = new Calculator();
 
         while (run) {
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-----------------------------------------");
             System.out.println("1.덧셈 | 2.뺄셈 | 3.곱셈 | 4.나눗셈 | 5.종료");
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("------------------------------------------");
             System.out.print("선택> ");
             selectNo = scanner.nextInt();
             if (selectNo == 1) {

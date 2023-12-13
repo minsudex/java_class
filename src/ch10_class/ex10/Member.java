@@ -82,4 +82,4 @@ public class Member {
     }
 
 }
-
+//Alt + insert 생성자 단축키
