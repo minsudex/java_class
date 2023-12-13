@@ -13,6 +13,7 @@ public class Ex09_ArrayEx {
             System.out.println("1.학생수입력 | 2.점수입력 | 3.점수목록 | 4.분석 | 5.종료");
             System.out.println("---------------------------------------------------------");
             System.out.print("선택> ");
+
             int select = scanner.nextInt();
             if (select == 1) {
                 System.out.print("학생수>");

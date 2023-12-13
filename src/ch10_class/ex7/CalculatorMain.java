@@ -10,7 +10,7 @@ public class CalculatorMain {
          * 각 번호를 선택하면 Calculator 클래스에 있는 해당 메서드를 호출하여 결과를 출력함
          */
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // 스캐너 인식
         boolean run = true;
         int selectNo = 0;
         int num1 = 0, num2 = 0;
