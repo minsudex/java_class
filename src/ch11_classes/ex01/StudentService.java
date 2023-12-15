@@ -19,7 +19,7 @@ public class StudentService {
 
     public void method2() {
         System.out.println("StudentService.method2");
-        String str1 = "집에 가고 싶다";
+        String str1 = "집에 가고 싶다 orz";
         studentRepository.method2(str1);
     }
 
@@ -69,7 +69,5 @@ public class StudentService {
         }
 
     }
-
-
 
 }
