@@ -19,9 +19,9 @@ public class BoardMain {
         Board board = null;
 
         while (run) {
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------------------");
             System.out.println("1.글작성 | 2.글조회 | 3.종료");
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("-------------------------");
             System.out.print("선택> ");
             selectNo = scanner.nextInt();
             if (selectNo == 1) {
