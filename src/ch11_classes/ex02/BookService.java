@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BookService {
-    Scanner scanner = new Scanner(System.in);
+    BookDTO bookDTO = null;
     BookRepository bookRepository = new BookRepository();
+    Scanner scanner = new Scanner(System.in);
 
     /**
      * 도서등록 메서드
@@ -18,23 +19,22 @@ public class BookService {
      * 등록 여부를 출력한다.(등록성공 or 등록실패)
      */
     public void save() {
-        System.out.print("도서명: AI 이후의 세계 ");
+        System.out.print("도서명: ");
         String bookTitle = scanner.next();
-        System.out.print("저자: 헨리 키신저, 에릭 슈밋, 대니얼 허톤로커, 김대식 ");
+        System.out.print("저자: ");
         String bookAuthor = scanner.next();
-        System.out.print("가격: 17820");
+        System.out.print("가격: ");
         int bookPrice = scanner.nextInt();
-        System.out.print("출판사: 윌북");
+        System.out.print("출판사: ");
         String bookPublisher = scanner.next();
-        BookDTO bookDTO = new BookDTO(bookTitle, bookAuthor, bookPrice, bookPublisher);
+        bookDTO = new BookDTO(bookTitle, bookAuthor, bookPrice, bookPublisher);
         boolean result = bookRepository.save(bookDTO);
         if (result) {
-            System.out.println("등록 성공");
+            System.out.println("등록성공");
         } else {
-            System.out.println("등록 실패");
+            System.out.println("등록실패");
         }
     }
-
 
     /**
      * 도서목록 메서드
@@ -46,11 +46,10 @@ public class BookService {
      */
     public void findAll() {
         List<BookDTO> bookDTOList = bookRepository.findAll();
-        for (BookDTO bookDTO: bookDTOList) {
-            System.out.println("bookDTO = " + bookDTO);
+        for (BookDTO bookList : bookDTOList) {
+            System.out.println(bookList);
         }
     }
-
 
     /**
      * 도서조회 메서드
@@ -58,20 +57,19 @@ public class BookService {
      * parameter: x
      * return: x
      * 실행내용
-     *      id를 입력받고 Repository로 부터 id에 해당 하는 도서 정보를 출력
-     *      없으면 없다고 출력
+     * id를 입력받고 Repository로 부터 id에 해당 하는 도서 정보를 출력
+     * 없으면 없다고 출력
      */
     public void findById() {
-        System.out.print("조회 id: ");
+        System.out.print("조회할 id: ");
         Long id = scanner.nextLong();
-        BookDTO bookDTO = bookRepository.findById(id);
-        if (bookDTO != null) {
-            System.out.println("bookDTO = " + bookDTO);
+        BookDTO result = bookRepository.findById(id);
+        if (result != null) {
+            System.out.println(result);
         } else {
-            System.out.println("조회결과가 없습니다!");
+            System.out.println("조회한 id에는 정보가 없음.");
         }
     }
-
 
     /**
      * 도서조회 메서드
@@ -79,17 +77,17 @@ public class BookService {
      * parameter: x
      * return: x
      * 실행내용
-     *      도서제목을 입력받고 Repository로 부터 해당 하는 도서 정보를 출력(제목이 정확히 일치하는 것만)
-     *      없으면 없다고 출력
+     * 도서제목을 입력받고 Repository로 부터 해당 하는 도서 정보를 출력(제목이 정확히 일치하는 것만)
+     * 없으면 없다고 출력
      */
     public void findByTitle() {
-        System.out.print("도서명: ");
+        System.out.print("조회할 책제목: ");
         String bookTitle = scanner.next();
-        BookDTO bookDTO = bookRepository.findByTitle(bookTitle);
-        if (bookDTO != null) {
-            System.out.println("bookDTO = " + bookDTO);
+        BookDTO result = bookRepository.findByTitle(bookTitle);
+        if (result != null) {
+            System.out.println(result);
         } else {
-            System.out.println("조회결과가 없습니다!");
+            System.out.println("조회한 책제목은 없음.");
         }
     }
 
@@ -98,40 +96,41 @@ public class BookService {
         String bookTitle = scanner.next();
         List<BookDTO> bookDTOList = bookRepository.search(bookTitle);
         if (bookDTOList.size() > 0) {
-            for (BookDTO bookDTO: bookDTOList) {
-                System.out.println("bookDTO = " + bookDTO);
+            for (BookDTO bookDTO : bookDTOList) {
+                System.out.println(bookDTO);
             }
         } else {
-            // bookDTOList.size() == 0 => 결과가 없다
+            // bookDTOList.size() == 0 => 결과가 없다.
             System.out.println("검색 결과가 없습니다!");
         }
+
     }
 
-    public void update() {
+    public void priceUpdate() {
         // 수정할 id를 입력받음
         // 해당 id 도서가 있다면 수정할 가격을 입력받고 수정 처리
         // 없으면 없다고 출력
         System.out.print("수정할 id: ");
         Long id = scanner.nextLong();
-        BookDTO bookDTO = bookRepository.findById(id);
-        if (bookDTO != null) {
-            System.out.print("수정할 가격: ");
+        BookDTO result = bookRepository.findById(id);
+        if (result != null) {
+            System.out.println("수정할 가격: ");
             int bookPrice = scanner.nextInt();
-            boolean updateResult = bookRepository.update(id, bookPrice);
+            boolean updateResult = bookRepository.priceUpdate(id, bookPrice);
             if (updateResult) {
                 System.out.println("수정 성공");
             } else {
                 System.out.println("수정 실패");
             }
         } else {
-            System.out.println("조회결과가 없습니다!");
+            System.out.println("수정할 id가 없음");
         }
     }
 
-    public void delete() {
-        System.out.print("삭제할 id: ");
-        Long id = scanner.nextLong();
-        boolean result = bookRepository.delete(id);
+    public void bookDelete() {
+        System.out.print("삭제할 책id: ");
+        Long id2 = scanner.nextLong();
+        boolean result = bookRepository.bookDelete(id2);
         if (result) {
             System.out.println("삭제 성공");
         } else {
@@ -139,3 +138,5 @@ public class BookService {
         }
     }
 }
+
+

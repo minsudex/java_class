@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookRepository {
+    BookDTO bookId = null ;
     // 도서 정보를 관리하는 bookDTOList
     private static List<BookDTO> bookDTOList = new ArrayList<>();
     /**
@@ -15,9 +16,9 @@ public class BookRepository {
      *      Service로 부터 전달 받은 DTO 객체를 리스트에 저장하고 결과를 리턴
      */
     public boolean save(BookDTO bookDTO) {
-        return bookDTOList.add(bookDTO);
+        boolean result = bookDTOList.add(bookDTO);
+        return result;
     }
-
 
     /**
      * 도서목록 메서드
@@ -28,9 +29,9 @@ public class BookRepository {
      *      Service로 부터 호출되면 리스트를 리턴
      */
     public List<BookDTO> findAll() {
-        return bookDTOList;
+        List<BookDTO> result = bookDTOList;
+        return result;
     }
-
 
     /**
      * 도서조회 메서드
@@ -42,21 +43,14 @@ public class BookRepository {
      *      없으면 null 리턴
      */
     public BookDTO findById(Long id) {
-        BookDTO bookDTO = null;
-//        for (int i = 0; i < bookDTOList.size(); i++) {
-//            if (id.equals(bookDTOList.get(i).getId())) {
-//                bookDTO = bookDTOList.get(i);
-//            }
-//        }
-        // foreach
-        for (BookDTO bookDTO1: bookDTOList) {
-            if (id.equals(bookDTO1.getID())) {
-                bookDTO = bookDTO1;
+        BookDTO result = null;
+        for (int i = 0; i < bookDTOList.size(); i++) {
+            if(id.equals(bookDTOList.get(i).getID())) {
+                result = bookDTOList.get(i);
             }
         }
-        return bookDTO;
+        return result;
     }
-
 
     /**
      * 도서조회 메서드
@@ -68,31 +62,16 @@ public class BookRepository {
      *      없으면 null 리턴
      */
     public BookDTO findByTitle(String bookTitle) {
-        BookDTO bookDTO = null;
+        BookDTO result = null;
         for (int i = 0; i < bookDTOList.size(); i++) {
             if (bookTitle.equals(bookDTOList.get(i).getBookTitle())) {
-                bookDTO = bookDTOList.get(i);
+                result = bookDTOList.get(i);
             }
         }
-        return bookDTO;
+        return result;
     }
 
-    public List<BookDTO> search(String bookTitle) {
-        // 검색결과를 담을 List 선언
-        List<BookDTO> bookDTOS = new ArrayList<>();
-        for (int i = 0; i < bookDTOList.size(); i++) {
-            // 저장되어 있는 도서명에 검색어가 포함되어 있으면 true
-            if (bookDTOList.get(i).getBookTitle().contains(bookTitle)) {
-                // 조건을 만족하면 bookDTOS 에 추가
-//                bookDTOS.add(bookDTOList.get(i));
-                BookDTO bookDTO = bookDTOList.get(i);
-                bookDTOS.add(bookDTO);
-            }
-        }
-        return bookDTOS;
-    }
-
-    public boolean update(Long id, int bookPrice) {
+    public boolean priceUpdate (Long id, int bookPrice) {
         boolean result = false;
         for (int i = 0; i < bookDTOList.size(); i++) {
             if (id.equals(bookDTOList.get(i).getID())) {
@@ -103,14 +82,31 @@ public class BookRepository {
         return result;
     }
 
-    public boolean delete(Long id) {
+    public boolean bookDelete(Long id2) {
         boolean result = false;
         for (int i = 0; i < bookDTOList.size(); i++) {
-            if (id.equals(bookDTOList.get(i).getID())) {
+            if(id2.equals(bookDTOList.get(i).getID())) {
                 bookDTOList.remove(i);
                 result = true;
             }
         }
         return result;
+        // 리턴을 리스트로 받아 재곤!!와라라라라랄 ㅇㅁㅇ !!
+        // 꽈라라라라라랄라라라라라라라 ㅍㅂㅍ!
+    }
+
+    public List<BookDTO> search(String bookTitle) {
+        // 검색결과를 담은 List 선언
+        List<BookDTO> bookDTOS = new ArrayList<>();
+        for (int i = 0; i < bookDTOList.size(); i++) {
+            // 저장되어 있는 도서명에 검색어가 포함되어 있으면 true
+            if(bookDTOList.get(i).getBookTitle().contains(bookTitle)){
+                // 조건을 만족하면 bookDTOS 에 추가
+                //BookDTO bookDTO = bookDTOList.get(i);
+                //bookDTOS.add(bookDTO);
+                bookDTOS.add(bookDTOList.get(i));
+            }
+        }
+        return bookDTOS;
     }
 }
