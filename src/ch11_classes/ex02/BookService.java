@@ -20,6 +20,7 @@ public class BookService {
      * BookDTO 객체에 담아서 Repository로 전달하여 저장이 되도록 함
      * 등록 여부를 출력한다.(등록성공 or 등록실패)
      */
+    /* 도서등록 메서드  */
     public void save() {
         System.out.println("도서명; AI 이후의 세계");
         String bookTitle = scanner.next();
