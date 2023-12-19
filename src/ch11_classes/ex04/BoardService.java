@@ -3,9 +3,11 @@ package ch11_classes.ex04;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class BoardService {
     BoardRepository boardRepository = new BoardRepository();
     Scanner scanner = new Scanner(System.in);
+
     public void save() {
         System.out.print("제목: ");
         String boardTitle = scanner.next();
@@ -27,7 +29,7 @@ public class BoardService {
     public void findAll() {
         List<BoardDTO> boardDTOList = boardRepository.findAll();
         System.out.println("id\t" + "title\t" + "writer\t" + "count\t" + "date\t");
-        for (BoardDTO boardDTO: boardDTOList) {
+        for (BoardDTO boardDTO : boardDTOList) {
             System.out.println(boardDTO.getId() + "\t" + boardDTO.getBoardTitle() +
                     "\t" + boardDTO.getBoardWriter() + "\t" + boardDTO.getCount() + "\t" +
                     boardDTO.getCreatedAt() + "\t");
@@ -57,13 +59,13 @@ public class BoardService {
             System.out.print("비밀번호: ");
             String boardPass = scanner.next();
             boolean passResult = boardRepository.findByPass(updateId, boardPass);
-            if(passResult) {
+            if (passResult) {
                 System.out.print("수정할 제목: ");
                 String boardTitle = scanner.next();
                 System.out.print("수정할 내용: ");
                 String boardContents = scanner.next();
                 result = boardRepository.update(updateId, boardTitle, boardContents);
-                if(result != null) {
+                if (result != null) {
                     System.out.println("수정에 성공하셨습니다.");
                 } else {
                     System.out.println("수정에 실패하셨습니다.");
@@ -84,9 +86,9 @@ public class BoardService {
             System.out.print("비밀번호: ");
             String boardPass = scanner.next();
             boolean passResult = boardRepository.findByPass(deleteId, boardPass);
-            if(passResult) {
+            if (passResult) {
                 boolean deleteResult = boardRepository.delete(deleteId, boardPass);
-                if(deleteResult) {
+                if (deleteResult) {
                     System.out.println("삭제에 성공하셨습니다.");
                 } else {
                     System.out.println("삭제에 실패하셨습니다.");
@@ -103,16 +105,27 @@ public class BoardService {
         System.out.print("검색할 제목: ");
         String boardTitle = scanner.next();
         List<BoardDTO> result = boardRepository.search(boardTitle);
-        if (result.size() > 0){
+        if (result.size() > 0) {
             System.out.println("검색 결과");
             System.out.println("id\t" + "title\t" + "writer\t" + "count\t" + "date\t");
-            for (BoardDTO boardDTO: result) {
+            for (BoardDTO boardDTO : result) {
                 System.out.println(boardDTO.getId() + "\t" + boardDTO.getBoardTitle() +
                         "\t" + boardDTO.getBoardWriter() + "\t" + boardDTO.getCount() + "\t" +
                         boardDTO.getCreatedAt() + "\t");
             }
         } else {
             System.out.println("검색에 실패하셨습니다.");
+        }
+    }
+     // Refactoring(리펙터링)
+    // 목록 출력 전용 메서드
+    // findAll, search 메서드로 부터 list 데이터를 전달 받아서 출력을 하는 메서드
+    private void listPrint(List<BoardDTO> boardDTOList) {
+        System.out.println("id\t" + "title\t" + "writer\t" + "count\t" + "date\t");
+        for (BoardDTO boardDTO: boardDTOList) {
+            System.out.println(boardDTO.getId() + "\t" + boardDTO.getBoardTitle() +
+                    "\t" + boardDTO.getBoardWriter() + "\t" + boardDTO.getCount() + "\t" +
+                    boardDTO.getCreatedAt() + "\t");
         }
     }
 }
