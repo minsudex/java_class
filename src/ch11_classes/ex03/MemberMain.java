@@ -13,19 +13,19 @@ public class MemberMain {
             System.out.print("선택>");
             int select = scanner.nextInt();
             if (select == 1) {
-                memberService .register();
+                memberService.register(); /* 회원가입 */
             } else if (select == 2) {
-                memberService.login();
+                memberService.login();  /* 로그인 */
             } else if (select == 3) {
-                memberService.search();
+                memberService.search(); /* 목록조회 */
             } else if (select == 4) {
-                memberService.update();
+                memberService.update(); /* 정보수정 */
             } else if (select == 5) {
-                memberService.out();
+                memberService.out();   /* 회원탈퇴 */
             } else if (select == 6) {
-                memberService.logout();
+                memberService.logout(); /* 로그아웃 */
             }  else if (select == 0) {
-                break;
+                break; /* 종료 */
             }
         }
     }
