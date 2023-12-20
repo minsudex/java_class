@@ -18,7 +18,7 @@ public class Ex08_WhileEx {
 
         Scanner scanner = new Scanner(System.in);
         int total_money = 0;
-        while(true) {
+        while (true) {
             System.out.println("--------------------------------");
             System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.종료");
             System.out.println("--------------------------------");
@@ -29,22 +29,22 @@ public class Ex08_WhileEx {
                 System.out.print("예금액>");
                 int deposit = scanner.nextInt();
                 total_money += deposit;
-                System.out.println("현재잔액은 "+total_money+"입니다.");
-            } else if(select == 2) {
+                System.out.println("현재잔액은 " + total_money + "입니다.");
+            } else if (select == 2) {
                 // 출금
                 System.out.print("출금액>");
                 int withdraw = scanner.nextInt();
-                if(withdraw > total_money) {
+                if (withdraw > total_money) {
                     System.out.println("잔고가 부족합니다.");
-                    System.out.println("현재잔액은 "+total_money+"입니다.");
+                    System.out.println("현재잔액은 " + total_money + "입니다.");
                 } else {
                     // withdraw <= total_money
                     total_money -= withdraw;
-                    System.out.println("현재잔액은 "+total_money+"입니다.");
+                    System.out.println("현재잔액은 " + total_money + "입니다.");
                 }
             } else if (select == 3) {
                 // 잔고
-                System.out.println("현재잔액은 "+total_money+"입니다.");
+                System.out.println("현재잔액은 " + total_money + "입니다.");
             } else if (select == 4) {
                 // 종료
                 System.out.println("종료합니다.");
