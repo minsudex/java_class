@@ -7,7 +7,9 @@ public class BankService {
     BankRepository bankRepository = new BankRepository();
     Scanner scanner = new Scanner(System.in);
     ClientDTO clientDTO = new ClientDTO();
-    public void save() {
+    public void save() {   /* 계좌번호 중복 확인
+                                고객 정보 입력
+                                고객 정보 저장    */
         while(true) {
             System.out.print("계좌번호: ");
             String accountNumber = scanner.next();
@@ -33,7 +35,7 @@ public class BankService {
         }
     }
 
-    public void findByAccountNumber() {
+    public void findByAccountNumber() {     /*  계좌번호로 잔액 및 이름 조회    */
         System.out.print("계좌번호 입력: ");
         String accountNumber = scanner.next();
         boolean result = bankRepository.findNumber(accountNumber);
@@ -47,7 +49,7 @@ public class BankService {
 
     }
 
-    public void deposit() {
+    public void deposit() { /*  계좌번호로 입금액 조회  입금 처리  */
         System.out.print("계좌번호 입력: ");
         String accountNumber = scanner.next();
         System.out.print("입금액: ");
