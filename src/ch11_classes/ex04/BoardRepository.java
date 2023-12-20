@@ -28,9 +28,9 @@ public class BoardRepository {
         }
         return result;
     }
-    public BoardDTO findById(Long Id) {
+    public BoardDTO findById(Long Id) { /*  게시글 ID로 조회 메소드  */
         BoardDTO result = null;
-        for (int i = 0; i < boardDTOList.size(); i++) {
+        for (int i = 0; i < boardDTOList.size(); i++) { /*  boardDTOList: 게시글 목록이 저장된 리스트   */
             if (Id.equals(boardDTOList.get(i).getId())) {
                 result = boardDTOList.get(i);
             }
@@ -38,9 +38,9 @@ public class BoardRepository {
         return result;
     }
 
-    public boolean findByPass(Long Id, String boardPass) {
+    public boolean findByPass(Long Id, String boardPass) { /*   findByPass(Long Id, String boardPass): 게시글 ID와 비밀번호로 확인 메소드 */
         boolean result = false;
-        for (int i = 0; i < boardDTOList.size(); i++) {
+        for (int i = 0; i < boardDTOList.size(); i++) { /*  boardDTOList: 게시글 목록이 저장된 리스트   */
             if(Id.equals(boardDTOList.get(i).getId()) && boardPass.equals(boardDTOList.get(i).getBoardPass())) {
                 result = true;
             }
@@ -48,7 +48,7 @@ public class BoardRepository {
         return result;
     }
 
-    public BoardDTO update(Long Id, String boardTitle, String boardContents) {
+    public BoardDTO update(Long Id, String boardTitle, String boardContents) {  /*  update(Long Id, String boardTitle, String boardContents): 게시글 수정 메소드    */
         BoardDTO result = null;
         for (int i = 0; i < boardDTOList.size(); i++) {
             if(Id.equals(boardDTOList.get(i).getId())) {
@@ -60,7 +60,7 @@ public class BoardRepository {
         return result;
     }
 
-    public boolean delete(Long Id, String boardPass) {
+    public boolean delete(Long Id, String boardPass) {  /*  delete(Long Id, String boardPass): 게시글 삭제 메소드   */
         boolean result = false;
         for (int i = 0; i < boardDTOList.size(); i++) {
             if(Id.equals(boardDTOList.get(i).getId()) && boardPass.equals(boardDTOList.get(i).getBoardPass())) {
@@ -71,7 +71,7 @@ public class BoardRepository {
         return result;
     }
 
-    public List<BoardDTO> search(String boardTitle) {
+    public List<BoardDTO> search(String boardTitle) {   /*  search(String boardTitle): 게시글 제목으로 검색 메소드 */
         List<BoardDTO> result = new ArrayList<>();
         for (int i = 0; i < boardDTOList.size(); i++) {
             if(boardDTOList.get(i).getBoardTitle().contains(boardTitle)){

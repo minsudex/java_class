@@ -13,21 +13,21 @@ public class BoardMain {
             System.out.println("-------------------------------------------------------------------------------");
             System.out.print("선택> ");
             int select = scanner.nextInt();
-            if(select == 1) {
+            if(select == 1) {   /* 글작성 */
                 boardService.save();
-            } else if (select == 2) {
+            } else if (select == 2) {   /* 글 목록 조회   */
                 boardService.findAll();
-            } else if (select == 3) {
+            } else if (select == 3) {   /*  글 조회    */
                 boardService.findById();
-            } else if (select == 4) {
+            } else if (select == 4) {   /*  글 수정    */
                 boardService.update();
-            } else if (select == 5) {
+            } else if (select == 5) {   /*  글 삭제    */
                 boardService.delete();
-            } else if (select == 6) {
+            } else if (select == 6) {   /*  검색  */
                 boardService.search();
-            } else if (select == 7) {
+            } else if (select == 7) {   /*  테스트 데이터 생성  */
                 boardService.testData();
-            } else if (select == 0) {
+            } else if (select == 0) {   /*  종료 */
                 break;
             }
         }

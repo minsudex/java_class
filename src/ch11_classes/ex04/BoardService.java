@@ -8,7 +8,7 @@ public class BoardService {
     BoardRepository boardRepository = new BoardRepository();
     Scanner scanner = new Scanner(System.in);
 
-    public void save() {
+    public void save() {    /*  save(): 게시물 등록  */
         System.out.print("제목: ");
         String boardTitle = scanner.next();
         System.out.print("작성자: ");
@@ -26,7 +26,7 @@ public class BoardService {
         }
     }
 
-    public void findAll() {
+    public void findAll() { /*  findAll(): 게시물 목록 조회    */
         List<BoardDTO> boardDTOList = boardRepository.findAll();
         System.out.println("id\t" + "title\t" + "writer\t" + "count\t" + "date\t");
         for (BoardDTO boardDTO : boardDTOList) {
@@ -36,7 +36,7 @@ public class BoardService {
         }
     }
 
-    public void findById() {
+    public void findById() {    /*  findById(): 게시물 상세 조회   */
         System.out.print("조회할 글번호: ");
         Long findId = scanner.nextLong();
         // 1. 조회수를 1 증가
@@ -51,7 +51,7 @@ public class BoardService {
         }
     }
 
-    public void update() {
+    public void update() {  /*  update(): 게시물 수정    */
         System.out.print("수정할 글번호: ");
         Long updateId = scanner.nextLong();
         BoardDTO result = boardRepository.findById(updateId);
@@ -78,7 +78,7 @@ public class BoardService {
         }
     }
 
-    public void delete() {
+    public void delete() {  /*  delete(): 게시물 삭제    */
         System.out.print("삭제할 글번호: ");
         Long deleteId = scanner.nextLong();
         BoardDTO result = boardRepository.findById(deleteId);
@@ -101,7 +101,7 @@ public class BoardService {
         }
     }
 
-    public void search() {
+    public void search() {  /*  search(): 게시물 검색    */
         System.out.print("검색할 제목: ");
         String boardTitle = scanner.next();
         List<BoardDTO> result = boardRepository.search(boardTitle);
