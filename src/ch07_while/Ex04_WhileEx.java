@@ -15,9 +15,13 @@ public class Ex04_WhileEx {
 //}
 //}
         boolean run = true;
+        // 무한루프를 위해 run 변수를 true로 초기화합니다.
         while (run) {
+            // 1~6 사이의 난수를 발생시킵니다.
             int num = (int)(Math.random() * 6) + 1;
+            // 난수를 출력합니다.
             System.out.println("num = " + num);
+            // 난수가 6이면 무한루프를 종료합니다.
             if (num == 6) {
                 run = false;
             }

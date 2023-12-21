@@ -9,7 +9,7 @@ public class Ex03_Random {
         //  Math 클래스의 random() 메서드
         //  메서드: 어떤 출력(리턴타입) => double (0.0 ~ 1.0)
         System.out.println(Math.random());
-        //  결과값에 10을 곱해서 정수 부분을 만듬 (0~10)
+        //  결과값에 10을 곱해서 정수 부분을 만듬 (0~10)   *
         System.out.println(Math.random() * 10);
         //  결과값에 10을 곱해서 정수 부분을 만듬 (0~10)
         System.out.println(Math.random() * 45);

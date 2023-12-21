@@ -6,12 +6,13 @@ public class Ex01_WhileBasic {
         for (int i = 1; i <= 3; i++) {
             System.out.println("i = " + 1);
         }
-
+        // 1~3 까지 출력하는 while문
         int i = 1;
         while (i <= 3) {
             System.out.println("i = " + i);
             i++;
         }
+        // 1~3 까지 출력하는 do-while문
         int j = 10;
         do {
             System.out.println("j = " + j);
@@ -28,7 +29,7 @@ public class Ex01_WhileBasic {
                 break;
             }
         }
-
+        // 무한반복 (boolean 변수 사용)
         int l = 1;
         boolean run = true;
         while (run) {
