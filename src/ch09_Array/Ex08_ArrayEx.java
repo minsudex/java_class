@@ -11,16 +11,26 @@ public class Ex08_ArrayEx {
           */
 
         int[] numbers = null;
+        // 정수형 배열 numbers를 선언하고 null로 초기화합니다.
         Scanner scanner = new Scanner(System.in);
+        // 사용자 입력을 받기 위한 Scanner 객체를 생성합니다.
         System.out.println("배열 크기");
+        // 사용자에게 배열 크기를 입력하라고 지시합니다.
         int size = scanner.nextInt();
+        // 사용자 입력을 받아 size 변수에 저장합니다.
         if (size > 0) {
+            // 입력받은 크기가 0보다 큰 경우
             numbers = new int[size];
+            // 입력받은 크기로 배열을 생성합니다.
             System.out.println("numbers = " + numbers.length);
+            // 배열의 길이를 출력합니다.
         }   else {
+            // 입력받은 크기가 0 이하인 경우
             numbers = null;
+            // 배열을 null로 설정합니다.
         }
         System.out.println("numbers = " + numbers.length);
+        // 배열의 길이를 다시 출력합니다.
 
     }
 }

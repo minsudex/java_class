@@ -11,6 +11,7 @@ public class Ex06_ArrayEx {
          */
 
         Scanner sc = new Scanner(System.in);
+       // 사용자 입력을 받기 위한 Scanner 객체를 생성합니다.
         int[] array = new int[5];
         //  최댓값을 담기 위한 변수
         int maxnum = array[0];
@@ -18,6 +19,7 @@ public class Ex06_ArrayEx {
         for (int i = 0; i < array.length; i++) {
             System.out.println("숫자 입력: ");
             array[i] = sc.nextInt();
+            //  최댓값 찾기
             maxnum = array[i];
 
 //  최댓값 찾기

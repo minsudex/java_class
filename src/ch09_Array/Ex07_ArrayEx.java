@@ -11,12 +11,15 @@ public class Ex07_ArrayEx {
          * 하는 코드를 작성
          */
         int[] num = {3, 2, 4, 1, 5};
-
+        //  정렬할 배열을 선언합니다.
         //  중첩 for를 이용하여 정렬하기
         for (int i = 0; i < num.length - 1; i++) {
             for (int j = i + 1; j < num.length; j++) {
+                // 현재 인덱스 i의 값이 다음 인덱스 j의 값보다 크면
                 if (num[i] > num[j]) {
+                    // 두 값을 바꿔준다.
                     int temp = num[i];
+
                     num[i] = num[j];
                     num[j] = temp;
                 }
