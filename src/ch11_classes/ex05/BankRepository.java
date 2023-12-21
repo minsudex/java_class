@@ -43,9 +43,9 @@ public class BankRepository {
         boolean result = false;
         for (int i = 0; i < clientDTOList.size(); i++) {
             if(accountNumber.equals(clientDTOList.get(i).getAccountNumber())) {
-                long balance = clientDTOList.get(i).getBalance();
-                balance = balance + depositMoney;
-                clientDTOList.get(i).setBalance(balance);
+                long balance = clientDTOList.get(i).getBalance();   // 기존 잔액 가져옴
+                balance = balance + depositMoney;   // 기존 잔액 + 입금액 => 잔액
+                clientDTOList.get(i).setBalance(balance);   // 해당 고객의 잔액 값으로 저장
                 result = true;
             }
         }
@@ -84,7 +84,7 @@ public class BankRepository {
     public List<AccountDTO> findAll(String accountNumber) {
         List<AccountDTO> result = new ArrayList<>();
         for (int i = 0; i < accountDTOList.size(); i++) {
-            if (accountNumber.equals(accountDTOList.get(i).getAccountNumber())) {
+            if (accountNumber.equals(accountDTOList.get(i).getAccountNumber())) {   // 보내는 사람의 잔액, 거래내역 처리
                 result.add(accountDTOList.get(i));
             }
         }
@@ -94,7 +94,7 @@ public class BankRepository {
     public List<AccountDTO> findDeposit(String accountNumber) {
         List<AccountDTO> result = new ArrayList<>();
         for (int i = 0; i < accountDTOList.size(); i++) {
-            if (accountNumber.equals(accountDTOList.get(i).getAccountNumber())) {
+            if (accountNumber.equals(accountDTOList.get(i).getAccountNumber())) {   // 받는 사람의 잔액, 거래내역 처리
                 if(accountDTOList.get(i).getWithdraw() == 0 )
                     result.add(accountDTOList.get(i));
             }
