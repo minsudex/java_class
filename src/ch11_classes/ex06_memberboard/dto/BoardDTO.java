@@ -81,10 +81,10 @@ public class BoardDTO {                         //  public class BoardDTO {: 게
         return "BoardDTO{" +                                        //  객체의 정보를 문자열로 반환합니다.
                 "id=" + id +                                        //  게시글 고유 식별 번호를 반환합니다.
                 ", boardTitle='" + boardTitle + '\'' +              //  게시글 제목을 반환합니다.
-                ", boardWriter='" + boardWriter + '\'' +            //
-                ", boardContents='" + boardContents + '\'' +
-                ", boardHits=" + boardHits +
-                ", createdAt='" + createdAt + '\'' +
-                '}';
+                ", boardWriter='" + boardWriter + '\'' +            // 작성자 정보를 추가합니다.
+                ", boardContents='" + boardContents + '\'' +        // 게시글 내용을 추가합니다.
+                ", boardHits=" + boardHits +                        // 조회수를 추가합니다.
+                ", createdAt='" + createdAt + '\'' +                // 작성일자를 추가합니다.
+                '}';                                                // 문자열을 닫습니다.
     }
 }
