@@ -6,7 +6,7 @@ public class Student {
     String studentMajor;
     String studentMobile;
 
-    //  기본생성자
+    // 기본생성자
     public Student() {
         System.out.println("Student 기본생성자");
     }
