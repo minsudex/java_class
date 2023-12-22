@@ -8,6 +8,15 @@ import java.util.List;          //  List 인터페이스를 사용하기 위해 
 public class CommentRepository {    //  댓글 기능을 담당하는 CommentRepository 클래스를 선언합니다.
     private static List<CommentDTO> commentDTOList = new ArrayList<>(); //  댓글 데이터를 저장할 ArrayList 객체를 생성합니다.
 
+    /**
+     * 댓글조회 메서드
+     * name: findId
+     * parameter: id
+     * return: List<CommentDTO>
+     * 실행내용
+     *      BoardService로 부터 전달받은 id를 리스트에 있는 id와 비교하고
+     *      id에 대한 DTO객체를 리스트에 저장하고 결과를 리턴
+     */
 
     public List<CommentDTO> findId(Long id) {
         List<CommentDTO> commentDTOS = new ArrayList<>();
