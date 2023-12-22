@@ -1,12 +1,12 @@
-package ch11_classes.ex06_memberboard.repository;
+package ch11_classes.ex06_memberboard.repository;   //코드가 속한 패키지를 지정합니다.
 
-import ch11_classes.ex06_memberboard.dto.CommentDTO;
+import ch11_classes.ex06_memberboard.dto.CommentDTO;    //CommentDTO 클래스를 사용하기 위해 불러옵니다.
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayList;     //  ArrayList 클래스를 사용하기 위해 불러옵니다.
+import java.util.List;          //  List 인터페이스를 사용하기 위해 불러옵니다.
 
-public class CommentRepository {
-    private static List<CommentDTO> commentDTOList = new ArrayList<>();
+public class CommentRepository {    //  댓글 기능을 담당하는 CommentRepository 클래스를 선언합니다.
+    private static List<CommentDTO> commentDTOList = new ArrayList<>(); //  댓글 데이터를 저장할 ArrayList 객체를 생성합니다.
 
 
     public List<CommentDTO> findId(Long id) {
@@ -15,11 +15,11 @@ public class CommentRepository {
             if (id.equals(commentDTOList.get(i).getBoardId())) {
                 commentDTOS.add(commentDTOList.get(i));
             }
-        }
+        }   //  게시물 ID에 해당하는 댓글 목록을 조회하는 메서드입니다. 전달받은 id와 일치하는 boardId를 가진 댓글들을 찾아서 반환합니다.
         return commentDTOS;
     }
 
     public boolean save(CommentDTO commentDTO) {
         return commentDTOList.add(commentDTO);
     }
-}
+}   //  댓글을 저장하는 메서드입니다. 전달받은 commentDTO 객체를 commentDTOList에 추가하고 성공 여부를 반환합니다.

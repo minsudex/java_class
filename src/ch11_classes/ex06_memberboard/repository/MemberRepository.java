@@ -1,12 +1,12 @@
-package ch11_classes.ex06_memberboard.repository;
+package ch11_classes.ex06_memberboard.repository;   //  코드가 속한 패키지를 지정합니다.
 
-import ch11_classes.ex06_memberboard.dto.MemberDTO;
+import ch11_classes.ex06_memberboard.dto.MemberDTO; //  MemberDTO 클래스를 사용하기 위해 불러옵니다.
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayList; //  ArrayList 클래스를 사용하기 위해 불러옵니다.
+import java.util.List;      //  List 인터페이스를 사용하기 위해 불러옵니다.
 
-public class MemberRepository {
-    private static List<MemberDTO> memeberDTOList = new ArrayList<>();
+public class MemberRepository {     //  회원 관리 기능을 담당하는 MemberRepository 클래스를 선언합니다.
+    private static List<MemberDTO> memeberDTOList = new ArrayList<>();  //  회원 데이터를 저장할 ArrayList 객체를 생성합니다.
 
     public MemberDTO emailCheck(String memberEmail) {
         for (MemberDTO memeberDTO: memeberDTOList) {
@@ -20,11 +20,11 @@ public class MemberRepository {
     public boolean save(MemberDTO memberDTO) {
         return memeberDTOList.add(memberDTO);
     }
-
+    //  회원 정보를 저장하는 메서드입니다. 전달받은 memberDTO 객체를 memeberDTOList에 추가하고 성공 여부를 반환합니다.
     public List<MemberDTO> findAll() {
         return memeberDTOList;
     }
-
+    //  모든 회원 목록을 조회하는 메서드입니다. memeberDTOList를 반환합니다.
     public MemberDTO update(String memberEmail, String memberName, String memberMobile) {
         for (int i = 0; i < memeberDTOList.size(); i++) {
             if(memberEmail.equals(memeberDTOList.get(i).getMemberEmail())) {
