@@ -17,20 +17,28 @@ public class MainController {
             System.out.print("선택> ");
             int select = scanner.nextInt();
             if (select == 1) {
+                // 회원 가입 기능 호출 문장
                 memberService.save();
             } else if (select == 2) {
+                // 회원 로그인 기닝 호출 문장
                 memberService.login();
             } else if (select == 3) {
+                // 회원목록 기능 호출 문장
                 memberService.findAll();
             } else if (select == 4) {
+                // 회원수정 기능 호출 문장
                 memberService.update();
             } else if (select == 5) {
+                // 회원탈퇴 기능 호출 문장
                 memberService.delete();
             } else if (select == 6) {
+                // 회원로그아웃 기능 호출 문장
                 memberService.logout();
             } else if (select == 7) {
+                // 회원 게시물 기능 호출 문장
                 memberService.board();
             } else if (select == 0) {
+                // 종료
                 break;
             }
         }
