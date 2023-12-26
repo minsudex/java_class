@@ -1,25 +1,27 @@
 package ch14_inheritance;
 
-public class inheritanceMain {
-    ParentClass parentClass = new PerantClass();
-    parantclass.setName("이름1");
-    parentclass.setAge(10)
-    System.out.println("parentClass =" parentclass)
-    parentClass.hello():
+public class InheritanceMain {
+    public static void main(String[] args) {
+        ch14_inheritance.ex01.ParentClass parentClass = new ch14_inheritance.ex01.ParentClass();
+        parentClass.setName("이름1");
+        parentClass.setAge(10);
+        System.out.println("parentClass = " + parentClass);
+        parentClass.hello();
 
-    childClass childClass = new ChildClass();
-    // 상속을 받았기 때문에 자식클래스에서 get, set 메서드 사용가능
-    childclass.setName("자식이름1");
-    childClass.setAge(100);
-    System.out.prinln("childClass = " + childClass);
-    childClass.hello();
+        ChildClass childClass = new ChildClass();
+        // 상속을 받았기 때문에 자식클래스에서 get, set 메서드 사용 가능
+        childClass.setName("자식이름1");
+        childClass.setAge(100);
+        System.out.println("childClass = " + childClass);
+        childClass.hello();
 
-    // 좌변 : 부모타입의 객체, 우변: 자식클래스 생성자
-    PerantClass perantClass = new childClass)();
-    ParantClass1.hello():
-    parantclass1 = new PerantClass();
-    PerantClass1.hello();
-    // 우변 : 자식타입의 객체, 우변: 부모클래스 생성자
-    ChildClass childClass1 = (childClass) new ParentClass():
-}
+        // 좌변: 부모타입의 객체, 우변: 자식클래스 생성자
+        ch14_inheritance.ex01.ParentClass parentClass1 = new ch14_inheritance.ex01.ParentClass();
+        parentClass1.hello();
+        parentClass1 = new ch14_inheritance.ex01.ParentClass();
+        parentClass1.hello();
+
+        // 좌변: 자식타입의 객체, 우변: 부모클래스 생성자
+//        ChildClass childClass1 = new ParentClass();
+    }
 }

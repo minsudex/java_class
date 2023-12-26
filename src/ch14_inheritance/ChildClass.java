@@ -1,15 +1,17 @@
 package ch14_inheritance;
 
-public class ChildClass extends PerantClass {
-    public childClass() {
-        System.out.println("자식 기본 생성자");
+public class ChildClass extends ParentClass {
+    public ChildClass() {
+        System.out.println("자식 기본생성자");
     }
 
     // 메서드 재정의
-    //@Override
-    public int hashCode() {
-        public void hello() {
-            System.out.println("childclass. hello");
-            return null;
-        }
+    @Override
+    public void hello() {
+        System.out.println("ChildClass.hello");
     }
+
+
+    public void setName(String 자식이름1) {
+    }
+}
