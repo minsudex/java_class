@@ -10,11 +10,11 @@ public class CalculatorMain {
          * 각 번호를 선택하면 Calculator 클래스에 있는 해당 메서드를 호출하여 결과를 출력함
          */
 
-        Scanner scanner = new Scanner(System.in); // 스캐너 인식
-        boolean run = true;
-        int selectNo = 0;
-        int num1 = 0, num2 = 0;
-        Calculator calculator = new Calculator();
+        Scanner scanner = new Scanner(System.in);                                   // 스캐너 인식
+        boolean run = true;                                                         // 프로그램이 종료되지 않는 상태를 나타내는 변수
+        int selectNo = 0;                                                           // 사용자가 선택한 메뉴 번호를 저장하는 변수
+        int num1 = 0, num2 = 0;                                                     // 덧셈, 뺄셈, 곱셈 메서드에서 사용되는 두 개의 숫자를 저장하는 변수
+        Calculator calculator = new Calculator();                                   // Calculator 클래스의 인스턴스를 생성
 
         while (run) {
             System.out.println("-----------------------------------------");
@@ -45,7 +45,8 @@ public class CalculatorMain {
                 int result = calculator.div();
                 System.out.println("result = " + result);
             } else if (selectNo == 5) {
-                run = false;
+                run = false;                                                        // run 변수를 false로 설정하여 반복문을 종료
+
             }
         }
     }
