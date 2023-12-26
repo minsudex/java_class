@@ -1,4 +1,4 @@
-package ch11_list.ex02;
+package ch11_array.ex02;
 
 public class Student {
     /**
