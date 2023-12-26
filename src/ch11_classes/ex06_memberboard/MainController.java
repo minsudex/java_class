@@ -20,7 +20,7 @@ public class MainController {
                 // 회원 가입 기능 호출 문장
                 memberService.save();
             } else if (select == 2) {
-                // 회원 로그인 기닝 호출 문장
+                // 회원 로그인 기능 호출 문장
                 memberService.login();
             } else if (select == 3) {
                 // 회원목록 기능 호출 문장
