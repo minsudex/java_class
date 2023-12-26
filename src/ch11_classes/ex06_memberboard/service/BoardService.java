@@ -44,8 +44,8 @@ public class BoardService {
             System.out.println(boardDTO);
             System.out.println("===== 댓글 ======");
             List<CommentDTO> commentDTOS = commentRepository.findId(id);
-            if(commentDTOS.size() > 0) {
-                for (CommentDTO commentDTO: commentDTOS) {
+            if (commentDTOS.size() > 0) {
+                for (CommentDTO commentDTO : commentDTOS) {
                     System.out.println(commentDTO);
                 }
             } else {
