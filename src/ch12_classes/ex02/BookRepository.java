@@ -1,3 +1,5 @@
+package ch12_classes.ex02;
+
 import ch12_classes.ex02.BookDTO;
 
 import java.util.ArrayList;
