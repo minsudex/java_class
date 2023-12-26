@@ -1,5 +1,6 @@
 package ch12_classes.ex02;
 
+import ch13_map.ex02.BookRepository;
 
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class BookService {
         int bookPrice = scanner.nextInt();
         System.out.print("출판사: ");
         String bookPublisher = scanner.next();
-        BookDTO bookDTO = new BookDTO(bookTitle, bookAuthor, bookPrice, bookPublisher);
+        ch13_map.ex02.BookDTO bookDTO = new ch13_map.ex02.BookDTO(bookTitle, bookAuthor, bookPrice, bookPublisher);
         boolean result = bookRepository.save(bookDTO);
         if (result) {
             System.out.println("등록 성공");
@@ -46,7 +47,7 @@ public class BookService {
      * Repository로 부터 목록을 리턴 받아서 목록에 있는 모든 정보를 출력
      */
     public void findAll() {
-        List<BookDTO> bookDTOList = bookRepository.findAll();
+        List<BookDTO> bookDTOList = (List<BookDTO>) bookRepository.findAll();
         for (BookDTO bookDTO: bookDTOList) {
             System.out.println("bookDTO = " + bookDTO);
         }
@@ -65,7 +66,7 @@ public class BookService {
     public void findById() {
         System.out.print("조회 id: ");
         Long id = scanner.nextLong();
-        BookDTO bookDTO = bookRepository.findById(id);
+        ch13_map.ex02.BookDTO bookDTO = bookRepository.findById(id);
         if (bookDTO != null) {
             System.out.println("bookDTO = " + bookDTO);
         } else {
@@ -97,9 +98,9 @@ public class BookService {
     public void search() {
         System.out.print("검색어: ");
         String bookTitle = scanner.next();
-        List<BookDTO> bookDTOList = bookRepository.search(bookTitle);
+        List<ch13_map.ex02.BookDTO> bookDTOList = bookRepository.search(bookTitle);
         if (bookDTOList.size() > 0) {
-            for (BookDTO bookDTO: bookDTOList) {
+            for (ch13_map.ex02.BookDTO bookDTO: bookDTOList) {
                 System.out.println("bookDTO = " + bookDTO);
             }
         } else {
@@ -114,7 +115,7 @@ public class BookService {
         // 없으면 없다고 출력
         System.out.print("수정할 id: ");
         Long id = scanner.nextLong();
-        BookDTO bookDTO = bookRepository.findById(id);
+        ch13_map.ex02.BookDTO bookDTO = bookRepository.findById(id);
         if (bookDTO != null) {
             System.out.print("수정할 가격: ");
             int bookPrice = scanner.nextInt();

@@ -63,4 +63,7 @@ public class BookRepository {
         }
         return bookDTOList;
     }
+
+    public ch12_classes.ex02.BookDTO findByTitle(String bookTitle) {
+    }
 }
