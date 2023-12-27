@@ -1,4 +1,4 @@
-package ch14_inheritance;
+package ch14_inheritance.ex01;
 
 public class ChildClass extends ParentClass {
     public ChildClass() {
@@ -12,6 +12,4 @@ public class ChildClass extends ParentClass {
     }
 
 
-    public void setName(String 자식이름1) {
-    }
 }

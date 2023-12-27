@@ -1,8 +1,8 @@
-package ch14_inheritance;
+package ch14_inheritance.ex01;
 
 public class InheritanceMain {
     public static void main(String[] args) {
-        ch14_inheritance.ex01.ParentClass parentClass = new ch14_inheritance.ex01.ParentClass();
+        ParentClass parentClass = new ParentClass();
         parentClass.setName("이름1");
         parentClass.setAge(10);
         System.out.println("parentClass = " + parentClass);
@@ -16,9 +16,9 @@ public class InheritanceMain {
         childClass.hello();
 
         // 좌변: 부모타입의 객체, 우변: 자식클래스 생성자
-        ch14_inheritance.ex01.ParentClass parentClass1 = new ch14_inheritance.ex01.ParentClass();
+        ParentClass parentClass1 = new ChildClass();
         parentClass1.hello();
-        parentClass1 = new ch14_inheritance.ex01.ParentClass();
+        parentClass1 = new ParentClass();
         parentClass1.hello();
 
         // 좌변: 자식타입의 객체, 우변: 부모클래스 생성자
