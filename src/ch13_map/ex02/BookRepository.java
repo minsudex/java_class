@@ -64,6 +64,3 @@ public class BookRepository {
         return bookDTOList;
     }
 }
-
-
-
