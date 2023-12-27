@@ -2,7 +2,7 @@ package ch15_Interface.ex01;
 
 public class IntMain {
     public static void main(String[] args) {
-        // 인테페이스 객체 선언 (x)
+        // 인터페이스 객체 선언(x)
 //        Interface1 interface1 = new Interface1();
         // 구현클래스 자체를 객체로 사용할 수 있지만
         // 이렇게 사용하지 않음
