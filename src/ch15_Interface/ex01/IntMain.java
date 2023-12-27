@@ -1,4 +1,4 @@
-package ch15_interface.ex01;
+package ch15_Interface.ex01;
 
 public class IntMain {
     public static void main(String[] args) {
